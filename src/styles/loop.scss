@@ -1,0 +1,247 @@
+@import "./shared.scss";
+
+.loop-player {
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: $surface;
+    border-radius: $radius;
+    box-shadow: $card-shadow;
+
+    & > :not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    &__title {
+        font-family: $monospace;
+        font-size: $heading;
+        overflow-wrap: break-word;
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+
+    &__description {
+        font-family: $sans-serif;
+    }
+
+    &__progress {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        position: relative;
+        height: 4rem;
+
+        &__bar {
+            background-color: $background;
+            height: 0.5rem;
+            border-radius: $radius;
+        }
+
+        &__completed {
+            background-color: $primary;
+            height: 0.5rem;
+            border-radius: $radius;
+            width: 0;
+            transition: width 0.2s ease-in-out;
+        }
+
+        &__button {
+            box-sizing: border-box;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            right: 0;
+            font-size: $subheading;
+            border-radius: 50%;
+            padding: 1rem;
+            box-shadow: $card-shadow;
+
+            &__svg {
+                fill: white;
+                width: 1.75rem;
+                height: 1.75rem;
+            }
+        }
+    }
+}
+
+.loop-editor {
+    $loop: &;
+
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    padding: 1rem;
+    background-color: $surface;
+    border-radius: $radius;
+    box-shadow: $card-shadow;
+
+    & > :not(:last-child) {
+        margin-bottom: 1rem;
+    }
+
+    &__controls {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: $subheading;
+    }
+
+    &__play-button {
+        box-sizing: border-box;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        padding: 1rem;
+        box-shadow: $card-shadow;
+
+        &__svg {
+            fill: white;
+            width: 1.75rem;
+            height: 1.75rem;
+        }
+    }
+
+    &__tempo {
+        display: flex;
+        align-items: center;
+
+        & > :not(:last-child) {
+            margin-right: 0.5rem;
+        }
+
+        &-input {
+            border: none;
+            box-sizing: border-box;
+            text-align: center;
+            padding: 0.5em;
+            width: 4rem;
+            font-family: $monospace;
+        }
+    }
+
+    &__options-menu {
+        display: flex;
+    }
+
+    &__bar-indicators {
+        display: flex;
+        margin-bottom: 0.5rem;
+    }
+
+    &__bar-indicator {
+        $bar-indicator: &;
+
+        // TODO fix this shit one day
+        min-width: 157.5px;
+
+        display: flex;
+        justify-content: center;
+        border-radius: $radius;
+        height: 0.25rem;
+        transition: height 0.2s ease;
+
+        &:not(:last-child) {
+            margin-right: 0.5rem;
+        }
+
+        &--removing-bars {
+            height: 2rem;
+            background-color: $error;
+            cursor: pointer;
+
+            &:hover,
+            &:focus {
+                background-color: lighten($color: $error, $amount: 5%);
+            }
+        }
+
+        &__remove-label {
+            font-size: $brand;
+            color: $surface;
+            border-radius: $radius;
+        }
+    }
+
+    &__step-indicator {
+        width: 2rem;
+        height: 100%;
+        background-color: $surface-dark;
+        border-radius: $radius;
+
+        &:not(:last-child) {
+            margin-right: 0.25rem;
+        }
+
+        &--current {
+            background-color: $primary;
+        }
+    }
+
+    &__bars {
+        overflow-x: auto;
+    }
+
+    &__instrument {
+        display: flex;
+
+        &:not(:last-child) {
+            margin-bottom: 0.5rem;
+        }
+    }
+
+    &__bar {
+        display: flex;
+        flex-direction: column;
+
+        &:not(:last-child) {
+            margin-right: 0.5rem;
+        }
+    }
+
+    &__steps {
+        display: flex;
+        margin-top: 1.5rem;
+    }
+
+    &__step {
+        min-width: 2rem;
+        min-height: 2rem;
+        background-color: $background;
+
+        &:not(:last-child) {
+            margin-right: 0.25rem;
+        }
+
+        &:hover,
+        &:focus {
+            background-color: lighten($color: $primary, $amount: 50%);
+        }
+
+        &--enabled {
+            background-color: $primary;
+
+            &:hover,
+            &:focus {
+                background-color: darken($color: $primary, $amount: 10%);
+            }
+        }
+    }
+
+    &__label {
+        position: absolute;
+        font-family: $monospace;
+        font-size: $label;
+        font-weight: bold;
+    }
+
+    &__number {
+        font-family: $monospace;
+        font-size: $label;
+        font-style: italic;
+        margin-top: 0.5rem;
+    }
+}

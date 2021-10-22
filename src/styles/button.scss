@@ -1,0 +1,57 @@
+@import "./shared.scss";
+
+.button {
+    color: $surface;
+    background-color: $primary;
+    border: none;
+    border-radius: $radius;
+    padding: 0.4em 0.6em;
+    outline: none;
+    font-size: inherit;
+    font-family: inherit;
+    font-weight: inherit;
+    text-decoration: none;
+    cursor: pointer;
+
+    &:hover {
+        background-color: lighten($color: $primary, $amount: 5%);
+    }
+
+    &--invisible {
+        $self: &;
+        background: none;
+
+        &:hover {
+            background: none;
+
+            & > .svg {
+                fill: $primary;
+            }
+        }
+    }
+
+    &--background {
+        background-color: $background;
+        color: $on-background;
+
+        &:hover {
+            background-color: lighten($color: $background, $amount: 2.5%);
+        }
+    }
+
+    &--fill {
+        width: 100%;
+    }
+
+    &--huge {
+        font-size: 1.5em;
+    }
+
+    &--large {
+        font-size: 1.25em;
+    }
+
+    &--small {
+        font-size: 0.75em;
+    }
+}

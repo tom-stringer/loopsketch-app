@@ -1,0 +1,85 @@
+@import "./shared";
+@import "./alert.scss";
+@import "./button.scss";
+@import "./input.scss";
+@import "./modal.scss";
+@import "./nav.scss";
+@import "./loop.scss";
+@import "options";
+@import "./link.scss";
+@import "./profile.scss";
+@import "./banner.scss";
+@import "./content.scss";
+@import "./svg.scss";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    font-family: $sans-serif;
+    background-color: $background;
+    color: $on-background;
+    font-size: $root;
+}
+
+a {
+    text-decoration: underline;
+    text-decoration-color: $muted;
+    text-underline-position: under;
+    color: inherit;
+
+    &:hover {
+        color: $primary;
+        text-decoration-color: $primary;
+    }
+
+    &.no-decoration {
+        text-decoration: none;
+
+        &:hover {
+            color: inherit;
+        }
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-size: inherit;
+}
+
+.monospace {
+    font-family: $monospace;
+}
+
+.primary {
+    color: $primary;
+}
+
+.muted {
+    color: $muted;
+}
+
+.italic {
+    font-style: italic;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.relative {
+    position: relative;
+}
+
+.top-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem 1rem 0 0;
+}

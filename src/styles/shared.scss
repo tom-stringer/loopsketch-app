@@ -1,0 +1,66 @@
+// Font stacks.
+$sans-serif: Helvetica, Arial, sans-serif;
+$monospace: Consolas, monaco, monospace;
+
+// Font sizes.
+$root: 18px;
+$hero: 2rem;
+$brand: 1.75rem;
+$heading: 1.5rem;
+$subheading: 1.25rem;
+$main: 1rem;
+$footnote: 0.75rem;
+
+// Relative font sizes.
+$label: 0.75em;
+
+// Colours.
+$background: darken(
+    $color: white,
+    $amount: 5%,
+);
+$surface: white;
+$surface-dark: darken(
+    $color: white,
+    $amount: 50%,
+);
+$primary: #0089d8;
+$error: #ff3333;
+$heart: #ff97b9;
+$success: #3c9c07;
+$info: #ff8f00;
+$muted: lighten(
+    $color: black,
+    $amount: 25%,
+);
+
+$on-background: lighten(
+    $color: black,
+    $amount: 10%,
+);
+
+// Z-indexes.
+$z-main: 0;
+$z-options-menu: 10;
+$z-nav: 15;
+$z-modal-bg: 20;
+$z-modal: 30;
+
+$hover-shadow: 0 0 0.35rem 0
+    transparentize(
+        $color: $muted,
+        $amount: 0.25,
+    );
+$card-shadow: 0 0.2rem 0.15rem
+    transparentize(
+        $color: $surface-dark,
+        $amount: 0.25,
+    );
+$blur-shadow: 0 0 0.3rem $surface-dark;
+$blur-shadow-primary: 0 0 0.15rem
+    transparentize(
+        $color: $primary,
+        $amount: 0.25,
+    );
+
+$radius: 5px;

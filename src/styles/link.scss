@@ -1,0 +1,33 @@
+@import "./shared";
+
+// <button> styled as <a>, for added screen-reader support.
+// Note: use <Link> or <a> for actual hyperlinks.
+.link {
+    color: inherit;
+    font-size: inherit;
+    font-style: inherit;
+    font-family: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    white-space: nowrap;
+
+    // From <a>
+    text-decoration: underline;
+    text-decoration-color: $muted;
+    text-underline-position: under;
+
+    &:hover {
+        color: $primary;
+        text-decoration-color: $primary;
+    }
+
+    &--no-decoration {
+        text-decoration: none;
+
+        &:hover {
+            color: inherit;
+        }
+    }
+}

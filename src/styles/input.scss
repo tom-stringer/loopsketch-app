@@ -1,0 +1,48 @@
+@import "./shared.scss";
+
+.input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+
+    // Contains input and label.
+    &__group {
+        margin: 2em 0;
+    }
+
+    &__label {
+        display: block;
+        font-size: $label;
+        font-family: $monospace;
+        font-style: italic;
+        margin-bottom: 0.5em;
+    }
+
+    &__text {
+        border-bottom: 0.125em solid $muted;
+        border-radius: $radius;
+        padding: 0.5em;
+        width: 100%;
+        box-sizing: border-box;
+        transition: background-color 0.2s ease, box-shadow 0.2s ease;
+
+        &--area {
+            resize: none;
+            overflow: hidden;
+        }
+
+        &:hover {
+            background-color: $background;
+            box-shadow: $blur-shadow;
+        }
+
+        &:focus {
+            border-color: $primary;
+            background-color: lighten($color: $primary, $amount: 50%);
+            box-shadow: $blur-shadow-primary;
+        }
+    }
+}
